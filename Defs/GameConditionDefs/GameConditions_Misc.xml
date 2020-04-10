@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <GameConditionDef>
+        <defName>TurbulentWaters</defName>
+        <conditionClass>WatermillTweaks.GameCondition_TurbulentWaters</conditionClass>
+        <label>turbulent waters</label>
+        <description>The river is turbulent, watermill produces more power but gets damaged.</description>
+        <endMessage>The river has calmed down.</endMessage>
+		<letterText>The river is flowing faster than normal, making watermill generators produce more power but also damages them.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+    </GameConditionDef>
+
+</Defs>
