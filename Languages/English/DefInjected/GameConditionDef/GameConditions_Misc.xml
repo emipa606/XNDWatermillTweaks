@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <TurbulentWaters.label>turbulent waters</TurbulentWaters.label>
   <TurbulentWaters.description>The river is turbulent, watermill produces more power but gets damaged.</TurbulentWaters.description>
   <TurbulentWaters.endMessage>The river has calmed down.</TurbulentWaters.endMessage>
   <TurbulentWaters.letterText>The river is flowing faster than normal, making watermill generators produce more power but also damages them.</TurbulentWaters.letterText>
-
-
 </LanguageData>
