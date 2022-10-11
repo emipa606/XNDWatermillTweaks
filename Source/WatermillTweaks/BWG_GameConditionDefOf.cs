@@ -1,11 +1,10 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace WatermillTweaks
+namespace WatermillTweaks;
+
+[DefOf]
+public static class BWG_GameConditionDefOf
 {
-    [DefOf]
-    public static class BWG_GameConditionDefOf
-    {
-        public static GameConditionDef TurbulentWaters;
-    }
+    public static GameConditionDef TurbulentWaters;
 }

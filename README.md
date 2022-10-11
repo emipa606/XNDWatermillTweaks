@@ -1,6 +1,6 @@
 # XNDWatermillTweaks
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of XeoNovaDans mod 
 https://steamcommunity.com/sharedfiles/filedetails/?id=1496115783
@@ -8,24 +8,15 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1496115783
 Fixed the letter-text for turbulent river
 Added info in Watermill description when turbulent river is active
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-	[tr]
-		[td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-		[td]https://github.com/emipa606/XNDWatermillTweaks]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-	[/tr]
-[/table]
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 
 # **Compatibility**
 
-Should be safely addable to existing savegames. There may be issues removing this from ongoing saves if there&apos;s ongoing turbulent waters though.
+Should be safely addable to existing savegames. There may be issues removing this from ongoing saves if there's ongoing turbulent waters though.
 
 Should work fine with all mods out there.
 
@@ -41,7 +32,7 @@ Watermill Tweaks is a mod that makes several changes that are specific to the wa
 - **Seasonal Variation -** Power output also changes depending on the season. 20% more power is produced during the spring, and 10% more power is produced during the fall, but 30% less power is produced during the winter
 
 
-**Adding a new Incident - **Watermill Tweaks also adds a new but somewhat uncommon incident called &apos;Turbulent Waters&apos;. When this incident happens, all watermill generators on the affected map produce 50% more electricity, but they also get damaged over time because of debris and stress. Turbulent waters will only ever affect maps with standard rivers, large rivers and huge rivers though, with the incident being 2x more common with large rivers and 4x more common with huge rivers. Maps with greater than 2000mm of rainfall are also more likely to affected, and maps with less than 1000mm are less likely to be affected.
+**Adding a new Incident - **Watermill Tweaks also adds a new but somewhat uncommon incident called 'Turbulent Waters'. When this incident happens, all watermill generators on the affected map produce 50% more electricity, but they also get damaged over time because of debris and stress. Turbulent waters will only ever affect maps with standard rivers, large rivers and huge rivers though, with the incident being 2x more common with large rivers and 4x more common with huge rivers. Maps with greater than 2000mm of rainfall are also more likely to affected, and maps with less than 1000mm are less likely to be affected.
 
 Powered by the Harmony Patch Library.
 
@@ -54,10 +45,10 @@ Powered by the Harmony Patch Library.
 
 # **License**
 
-As is standard with my mods: you may include this mod in a mod pack, and you may derive from this, but please inform me if you&apos;re doing so through Ludeon Forums (preferably) or the Steam Comments Section, and give credit where credit&apos;s due.
+As is standard with my mods: you may include this mod in a mod pack, and you may derive from this, but please inform me if you're doing so through Ludeon Forums (preferably) or the Steam Comments Section, and give credit where credit's due.
 
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
@@ -67,6 +58,7 @@ As is standard with my mods: you may include this mod in a mod pack, and you may
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 

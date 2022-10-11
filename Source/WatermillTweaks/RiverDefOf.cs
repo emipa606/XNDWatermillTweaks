@@ -1,16 +1,15 @@
 ﻿using RimWorld;
 
-namespace WatermillTweaks
+namespace WatermillTweaks;
+
+[DefOf]
+public static class RiverDefOf
 {
-    [DefOf]
-    public static class RiverDefOf
-    {
-        public static RiverDef HugeRiver;
+    public static RiverDef HugeRiver;
 
-        public static RiverDef LargeRiver;
+    public static RiverDef LargeRiver;
 
-        public static RiverDef River;
+    public static RiverDef River;
 
-        public static RiverDef Creek;
-    }
+    public static RiverDef Creek;
 }
