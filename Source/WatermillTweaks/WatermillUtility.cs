@@ -35,7 +35,7 @@ public static class WatermillUtility
 
     public static RiverDef GetRiver(this Map map)
     {
-        return map.TileInfo.Rivers.First().river;
+        return map.TileInfo.Rivers?.First().river;
     }
 
     public static float SeasonalPowerOutputFactorFor(Season season)
@@ -58,7 +58,11 @@ public static class WatermillUtility
     public static SimpleCurve GetTemperatureToPowerOutputFactorCurveFor(Thing thing)
     {
         var river = thing.Map.GetRiver();
-        var halfPowerProductionLowTemp = LowPowerProductionDict[river];
+        var halfPowerProductionLowTemp = 0f;
+        if (river != null)
+        {
+            halfPowerProductionLowTemp = LowPowerProductionDict[river];
+        }
 
         return new SimpleCurve
         {

@@ -1,5 +1,8 @@
 # Changelog for XNDWatermillTweaks
 
+1.4.2 - Added some nullchecks
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests
 
 
