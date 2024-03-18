@@ -6,15 +6,15 @@ namespace WatermillTweaks;
 
 public class IncidentWorker_TurbulentWaters : IncidentWorker_MakeGameCondition
 {
-    private static readonly SimpleCurve RainfallToAdjustedChanceFactorCurve = new SimpleCurve
-    {
+    private static readonly SimpleCurve RainfallToAdjustedChanceFactorCurve =
+    [
         new CurvePoint(0f, 0f),
         new CurvePoint(200f, 0.5f),
         new CurvePoint(1000f, 1f),
         new CurvePoint(2000f, 1f),
         new CurvePoint(3000f, 1.3f),
         new CurvePoint(5000f, 2f)
-    };
+    ];
 
     private Map map;
 

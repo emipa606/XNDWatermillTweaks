@@ -14,8 +14,8 @@ public class GameCondition_TurbulentWaters : GameCondition
 
     private static readonly IntRange BaseTicksBetweenWatermillDamage = new IntRange(1200, 3600);
 
-    private static readonly SimpleCurve RandomDamageAmountCurve = new SimpleCurve
-    {
+    private static readonly SimpleCurve RandomDamageAmountCurve =
+    [
         new CurvePoint(0f, 5f),
         new CurvePoint(0.1f, 5f),
         new CurvePoint(0.73f, 15f),
@@ -24,9 +24,9 @@ public class GameCondition_TurbulentWaters : GameCondition
         new CurvePoint(0.88f, 25f),
         new CurvePoint(0.98f, 40f),
         new CurvePoint(1f, 40f)
-    };
+    ];
 
-    private readonly List<Building> watermillGeneratorsToAffect = new List<Building>();
+    private readonly List<Building> watermillGeneratorsToAffect = [];
 
     private int nextWatermillDamageTicks;
 

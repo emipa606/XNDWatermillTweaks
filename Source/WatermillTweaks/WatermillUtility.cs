@@ -64,14 +64,14 @@ public static class WatermillUtility
             halfPowerProductionLowTemp = LowPowerProductionDict[river];
         }
 
-        return new SimpleCurve
-        {
+        return
+        [
             new CurvePoint(Mathf.RoundToInt(halfPowerProductionLowTemp * 1.5f), 0f),
             new CurvePoint(halfPowerProductionLowTemp, 0.5f),
             new CurvePoint(FullPowerProductionLowTemp, 1f),
             new CurvePoint(FullPowerProductionHighTemp, 1f),
             new CurvePoint(HalfPowerProductionHighTemp, 0.5f),
             new CurvePoint(ZeroPowerProductionHighTemp, 0f)
-        };
+        ];
     }
 }
