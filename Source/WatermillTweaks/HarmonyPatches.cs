@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -8,21 +8,16 @@ namespace WatermillTweaks;
 [StaticConstructorOnStartup]
 internal static class HarmonyPatches
 {
-    private static readonly Type patchType = typeof(HarmonyPatches);
-
     static HarmonyPatches()
     {
-        var h = new Harmony("XeoNovaDan.WatermillTweaks");
-
-        h.Patch(AccessTools.Property(typeof(CompPowerPlantWater), "DesiredPowerOutput").GetGetMethod(true), null,
-            new HarmonyMethod(patchType, nameof(PostfixDesiredPowerOutput)));
-
-        h.Patch(AccessTools.Method(typeof(CompPowerPlantWater), nameof(CompPowerPlantWater.CompInspectStringExtra)),
-            null,
-            new HarmonyMethod(patchType, nameof(PostfixCompInspectStringExtra)));
+        new Harmony("XeoNovaDan.WatermillTweaks").PatchAll(Assembly.GetExecutingAssembly());
     }
+}
 
-    public static void PostfixDesiredPowerOutput(CompPowerPlantWater __instance, ref float __result)
+[HarmonyPatch(typeof(CompPowerPlantWater), "DesiredPowerOutput", MethodType.Getter)]
+public static class CompPowerPlantWater_DesiredPowerOutput
+{
+    public static void Postfix(CompPowerPlantWater __instance, ref float __result)
     {
         // Season
         __result *= WatermillUtility.SeasonalPowerOutputFactorFor(__instance.parent.GetMapSeason());
@@ -38,8 +33,12 @@ internal static class HarmonyPatches
             __result *= GameCondition_TurbulentWaters.WatermillPowerGenFactor;
         }
     }
+}
 
-    public static void PostfixCompInspectStringExtra(CompPowerPlantWater __instance, ref string __result)
+[HarmonyPatch(typeof(CompPowerPlantWater), nameof(CompPowerPlantWater.CompInspectStringExtra))]
+public static class CompPowerPlantWater_CompInspectStringExtra
+{
+    public static void Postfix(CompPowerPlantWater __instance, ref string __result)
     {
         // Season
         var season = __instance.parent.GetMapSeason();

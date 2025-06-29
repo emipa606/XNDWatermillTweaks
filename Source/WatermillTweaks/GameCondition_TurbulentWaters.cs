@@ -12,9 +12,9 @@ public class GameCondition_TurbulentWaters : GameCondition
 
     private const int WatermillListUpdateInterval = 600;
 
-    private static readonly IntRange BaseTicksBetweenWatermillDamage = new IntRange(1200, 3600);
+    private static readonly IntRange baseTicksBetweenWatermillDamage = new(1200, 3600);
 
-    private static readonly SimpleCurve RandomDamageAmountCurve =
+    private static readonly SimpleCurve randomDamageAmountCurve =
     [
         new CurvePoint(0f, 5f),
         new CurvePoint(0.1f, 5f),
@@ -36,7 +36,7 @@ public class GameCondition_TurbulentWaters : GameCondition
         Scribe_Values.Look(ref nextWatermillDamageTicks, "nextWatermillDamageTicks");
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
         {
-            UpdateWaterGeneratorsToAffect(true);
+            updateWaterGeneratorsToAffect(true);
         }
     }
 
@@ -44,10 +44,10 @@ public class GameCondition_TurbulentWaters : GameCondition
     {
         base.Init();
         UpdateWatermillDamageTicks();
-        UpdateWaterGeneratorsToAffect();
+        updateWaterGeneratorsToAffect();
     }
 
-    private void UpdateWaterGeneratorsToAffect(bool forceUpdate = false)
+    private void updateWaterGeneratorsToAffect(bool forceUpdate = false)
     {
         if (Find.TickManager.TicksGame % WatermillListUpdateInterval != 0 && !forceUpdate)
         {
@@ -69,7 +69,7 @@ public class GameCondition_TurbulentWaters : GameCondition
 
     private void UpdateWatermillDamageTicks()
     {
-        nextWatermillDamageTicks = Find.TickManager.TicksGame + (BaseTicksBetweenWatermillDamage.RandomInRange /
+        nextWatermillDamageTicks = Find.TickManager.TicksGame + (baseTicksBetweenWatermillDamage.RandomInRange /
                                                                  Math.Max(watermillGeneratorsToAffect.Count, 1));
     }
 
@@ -80,10 +80,10 @@ public class GameCondition_TurbulentWaters : GameCondition
             var generatorToSelect = new IntRange(0, watermillGeneratorsToAffect.Count - 1);
             Thing generatorToDamage = watermillGeneratorsToAffect[generatorToSelect.RandomInRange];
             generatorToDamage.TakeDamage(new DamageInfo(DamageDefOf.Blunt,
-                Mathf.RoundToInt(RandomDamageAmountCurve.Evaluate(Rand.Value))));
+                Mathf.RoundToInt(randomDamageAmountCurve.Evaluate(Rand.Value))));
             UpdateWatermillDamageTicks();
         }
 
-        UpdateWaterGeneratorsToAffect();
+        updateWaterGeneratorsToAffect();
     }
 }

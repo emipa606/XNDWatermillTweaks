@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
@@ -20,7 +21,7 @@ public static class WatermillUtility
     private const float HalfPowerProductionHighTemp = 60f;
     private const float ZeroPowerProductionHighTemp = 90f;
 
-    private static readonly Dictionary<RiverDef, float> LowPowerProductionDict = new Dictionary<RiverDef, float>
+    private static readonly Dictionary<RiverDef, float> lowPowerProductionDict = new()
     {
         { RiverDefOf.Creek, -5f },
         { RiverDefOf.River, -10f },
@@ -35,7 +36,7 @@ public static class WatermillUtility
 
     public static RiverDef GetRiver(this Map map)
     {
-        return map.TileInfo.Rivers?.First().river;
+        return map.TileInfo is not SurfaceTile surfaceTile ? null : surfaceTile.Rivers?.First().river;
     }
 
     public static float SeasonalPowerOutputFactorFor(Season season)
@@ -43,7 +44,6 @@ public static class WatermillUtility
         switch (season)
         {
             case Season.PermanentWinter:
-                return PowerProductionFactorWinter;
             case Season.Winter:
                 return PowerProductionFactorWinter;
             case Season.Fall:
@@ -61,7 +61,7 @@ public static class WatermillUtility
         var halfPowerProductionLowTemp = 0f;
         if (river != null)
         {
-            halfPowerProductionLowTemp = LowPowerProductionDict[river];
+            halfPowerProductionLowTemp = lowPowerProductionDict[river];
         }
 
         return

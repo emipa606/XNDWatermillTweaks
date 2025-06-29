@@ -1,12 +1,13 @@
 ﻿using System;
 using RimWorld;
+using RimWorld.Planet;
 using Verse;
 
 namespace WatermillTweaks;
 
 public class IncidentWorker_TurbulentWaters : IncidentWorker_MakeGameCondition
 {
-    private static readonly SimpleCurve RainfallToAdjustedChanceFactorCurve =
+    private static readonly SimpleCurve rainfallToAdjustedChanceFactorCurve =
     [
         new CurvePoint(0f, 0f),
         new CurvePoint(200f, 0.5f),
@@ -41,7 +42,7 @@ public class IncidentWorker_TurbulentWaters : IncidentWorker_MakeGameCondition
                         finalCommonality = def.baseChance * 4f;
                     }
 
-                    finalCommonality *= RainfallToAdjustedChanceFactorCurve.Evaluate(map.TileInfo.rainfall);
+                    finalCommonality *= rainfallToAdjustedChanceFactorCurve.Evaluate(map.TileInfo.rainfall);
                 }
             }
             catch (NullReferenceException)
@@ -57,6 +58,11 @@ public class IncidentWorker_TurbulentWaters : IncidentWorker_MakeGameCondition
     {
         var currentMap = (Map)parms.target;
         map = currentMap;
-        return !currentMap.TileInfo.Rivers.NullOrEmpty() && currentMap.mapTemperature.SeasonalTemp >= 15f;
+        if (map.TileInfo is not SurfaceTile surfaceTile)
+        {
+            return false;
+        }
+
+        return !surfaceTile.Rivers.NullOrEmpty() && currentMap.mapTemperature.SeasonalTemp >= 15f;
     }
 }

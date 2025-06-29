@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: turbulent waters -->
+  <TurbulentWaters.label>turbulent waters</TurbulentWaters.label>
+  <!-- EN: Turbulent waters -->
+  <TurbulentWaters.letterLabel>Turbulent waters</TurbulentWaters.letterLabel>
+  <!-- EN: Due to some heavy rainfall upstream or some other disturbances, the river is flowing more quickly than normal. Watermill generators will produce more power but will also get damaged over time. -->
+  <TurbulentWaters.letterText>Due to some heavy rainfall upstream or some other disturbances, the river is flowing more quickly than normal. Watermill generators will produce more power but will also get damaged over time.</TurbulentWaters.letterText>
+</LanguageData>
