@@ -13,9 +13,6 @@ public static class WatermillUtility
     private const float PowerProductionFactorSummer = 1f;
     private const float PowerProductionFactorFall = 1.1f;
     private const float PowerProductionFactorWinter = 0.7f;
-
-    //private const float ZeroPowerProductionLowTemp = -40f;
-    //private const float HalfPowerProductionLowTemp = -10f;
     private const float FullPowerProductionLowTemp = 0f;
     private const float FullPowerProductionHighTemp = 50f;
     private const float HalfPowerProductionHighTemp = 60f;
@@ -28,6 +25,12 @@ public static class WatermillUtility
         { RiverDefOf.LargeRiver, -15f },
         { RiverDefOf.HugeRiver, -20f }
     };
+
+    public static readonly List<string> WaterMillDefNames =
+    [
+        "WatermillGenerator",
+        "VFE_AdvancedWatermillGenerator"
+    ];
 
     public static Season GetMapSeason(this Thing thing)
     {

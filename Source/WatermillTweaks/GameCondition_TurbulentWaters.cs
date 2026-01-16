@@ -59,7 +59,7 @@ public class GameCondition_TurbulentWaters : GameCondition
         {
             foreach (var currentBuilding in map.listerBuildings.allBuildingsColonist)
             {
-                if (currentBuilding.def == ThingDefOf.WatermillGenerator)
+                if (WatermillUtility.WaterMillDefNames.Contains(currentBuilding.def.defName))
                 {
                     watermillGeneratorsToAffect.Add(currentBuilding);
                 }

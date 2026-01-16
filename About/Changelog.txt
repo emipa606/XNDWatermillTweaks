@@ -1,5 +1,8 @@
 # Changelog for XNDWatermillTweaks
 
+1.6.1 - Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2062943477]Vanilla Furniture Expanded - Power[/url]
+
+
 1.6.0 - Mod updated for 1.6 and passed autotests
 
 
